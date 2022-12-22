@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GrabDeal</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.svg' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+    <style type="text/css">
+      html,
+      body,
+      header,
+      .carousel {
+        height: 60vh;
+      }
+      .divider:after,
+      .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+      }
+  
+      @media (max-width: 740px) {
+  
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+  
+      @media (min-width: 800px) and (max-width: 850px) {
+  
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+  
+    </style>
+  </head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 fixed-top">
+
+    <!-- Navbar brand -->
+    <span class="navbar-brand"><a href="{% url 'store' %}" style="color: white">GrabDeal</a></span>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+  </nav>
+  <!-- Navbar -->
+
+{% comment %} <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="{% static 'images/login.png' %}"
+            class="img-fluid" alt="Phone image" >
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+          {% for message in messages %}
+
+          <div class="alert alert-danger" role="alert">
+              {{message}}
+          </div>
+       
+        {% endfor %}
+          <form method="post" action="{% url 'login' %} " autocomplete="off">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" name="username" id="form1Example13" class="form-control form-control-lg" required/>
+              <label class="form-label" for="form1Example13">Username</label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" required/>
+              <label class="form-label" for="form1Example23">Password</label>
+            </div>
+  
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+              <p class="text-center text-muted mt-4 mb-0">Don't have an account? <a href="{% url 'register' %}"
+                class="fw-bold text-body"><u>Create new</u></a></p>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+<br><br>
+<section class="h-80">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="{% static 'images/register.png' %}"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form method="post" action="{% url 'login' %} " autocomplete="off">
+          {% csrf_token %}
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Username</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg" name="username" required/>
+            
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example23">Password</label>
+            <input type="password" id="form1Example23" class="form-control form-control-lg" name="password" required/>
+            
+          </div>
+
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-lg btn-block" style="background-color:#929fba; color: white">Sign in</button>
+          <p class="text-center text-muted mt-4 mb-0">Don't have an account? <a href="{% url 'register' %}"
+            class="fw-bold text-body"><b><u>Create new</u></b></a></p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 wow fadeIn container-fluid">
+  <!-- Section: Text -->
+  <section class="mb-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-8">
+        <p class="pt-5">
+          GrabDeal is a lifestyle fashion brand that makes creative, distinctive fashion for the trendy, contemporary Indian. Bewakoof was created on the principle of creating impact through innovation, honesty and thoughtfulness. With a team of 400 members, and 8 Million+ products sold till date.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Text -->
+  <hr class="my-4">
+
+  <!-- Social icons -->
+  <div class="pb-4">
+
+    <a href="https://www.instagram.com/omkar_pedamkar13/" target="_blank">
+      <i class="fab fa-instagram mr-3"></i>
+    </a>
+
+    <a href="https://www.facebook.com/omkar.pedamkar.79/" target="_blank">
+      <i class="fab fa-facebook-f mr-3"></i>
+    </a>
+
+    <a href="https://twitter.com/OmkarPedamkar2" target="_blank">
+      <i class="fab fa-twitter mr-3"></i>
+    </a>
+
+    <a href="https://github.com/omkar1304" target="_blank">
+      <i class="fab fa-github mr-3"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/omkar-pedamkar/" target="_blank">
+      <i class="fab fa-linkedin mr-3"></i>
+    </a>
+
+  </div>
+  <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    © 2022 Copyright:
+    <a href="{% url 'store' %}"> GrabDeal.com </a>
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+// Animations initialization
+new WOW().init();
+
+</script>
+</body>
+
+</html>

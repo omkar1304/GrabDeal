@@ -1,0 +1,23 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h3 style="margin-top:20px;">
+    <b>
+        <center>UPDATE ADDRESS</center>
+    </b>
+</h3>
+
+<div class="card card-custom pb-4 mb-4" style="margin-top:50px;">
+    <div class="card-body">
+        <form autocomplete="off" method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-dark" type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

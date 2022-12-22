@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %} 
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GrabDeal</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.svg' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+    <style type="text/css">
+      html,
+      body,
+      header,
+      .carousel {
+        height: 60vh;
+      }
+  
+      @media (max-width: 740px) {
+  
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+  
+      @media (min-width: 800px) and (max-width: 850px) {
+  
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+  
+    </style>
+  </head>
+<body>
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 fixed-top">
+
+        <!-- Navbar brand -->
+        <span class="navbar-brand"><a href="{% url 'store' %}" style="color: white">GrabDeal</a></span>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+
+          <div class="ml-auto mr-0">
+            <ul class="navbar-nav mr-2">
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="{% url 'cart' %}">
+                  <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="badge red z-depth-1 mr-1">{{order.get_no_of_items}}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        <!-- Collapsible content -->
+
+      </nav>
+      <!--/.Navbar-->
+
+
+<div class="container">
+        {% block content %}
+    
+        {% endblock content %}
+</div>
+
+
+
+      <!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn container-fluid">
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p class="pt-5">
+              GrabDeal is a lifestyle fashion brand that makes creative, distinctive fashion for the trendy, contemporary Indian. Bewakoof was created on the principle of creating impact through innovation, honesty and thoughtfulness. With a team of 400 members, and 8 Million+ products sold till date.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+      <hr class="my-4">
+
+      <!-- Social icons -->
+      <div class="pb-4">
+
+        <a href="https://www.instagram.com/omkar_pedamkar13/" target="_blank">
+          <i class="fab fa-instagram mr-3"></i>
+        </a>
+
+        <a href="https://www.facebook.com/omkar.pedamkar.79/" target="_blank">
+          <i class="fab fa-facebook-f mr-3"></i>
+        </a>
+
+        <a href="https://twitter.com/OmkarPedamkar2" target="_blank">
+          <i class="fab fa-twitter mr-3"></i>
+        </a>
+
+        <a href="https://github.com/omkar1304" target="_blank">
+          <i class="fab fa-github mr-3"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/omkar-pedamkar/" target="_blank">
+          <i class="fab fa-linkedin mr-3"></i>
+        </a>
+
+      </div>
+      <!-- Social icons -->
+
+      <!--Copyright-->
+      <div class="footer-copyright py-3">
+        © 2022 Copyright:
+        <a href="{% url 'store' %}"> GrabDeal.com </a>
+      </div>
+      <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+<!-- End of .container -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
