@@ -41,9 +41,7 @@ Contributions to this project are welcome. If you would like to contribute, plea
 3. Make the necessary changes and commit them
 4. Create a pull request
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 
